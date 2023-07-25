@@ -1,0 +1,21 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.9  
+    steps:
+      - checkout  # Check out the code from the repository
+      - run:
+          name: Run Hello World
+          command: python3 hello.py  
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - feature-branch  # Replace with the name of your feature branch.
+
