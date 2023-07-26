@@ -18,10 +18,6 @@ workflows:
             branches:
               only:
                 - feature-branch  # Replace with the name of your feature branch.
-      - build:
-          filters:
-            branches:
-              only:
-                - main
+
 
 
